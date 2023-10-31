@@ -1,14 +1,12 @@
 const express = require('express');
-// const { indexView, foodView, hobbyView } = require('../controller/indexController');
-// const { food1View, food2View, food3View } = require('../controller/foodController');
+const { login, signUp, test } = require('../controller/loginController');
+const {newData} = require('../controller/locationController');
 const router = express.Router();
 
 
-// router.get('/', indexView);
-// router.get('/food', foodView);
-// router.get('/hobby', hobbyView);
-// router.get('/food/food1', food1View);  
-// router.get('/food/food2', food2View);
-// router.get('/food/food3', food3View);
+router.post('/login', login);
+router.post('/signUp', signUp);
+router.post('/test', test);
+router.post('/newData', newData);
 
 module.exports = router;

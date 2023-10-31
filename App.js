@@ -1,16 +1,13 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const routes = require('./routes/router');
-const db = require('./config/connection.js')
+// const db = require('./config/connection.js')
 
 
-db.connect((err)=>{
-    if(err){
-        console.log(err)
-        return
-    }
-    console.log('Database is connected')
-})
+app.use(express.json());  
+app.use(express.urlencoded({ extended: true }));  
+
 
 
 app.use('/', routes);
