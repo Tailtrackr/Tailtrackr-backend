@@ -5,6 +5,9 @@ var io = require("../App.js");
 
 io.on('connection', (socket) => {
   console.log('test');
+  socket.on('communicate', (data) => {
+    console.log('God are communicating: ', data);
+  });
 });
 // const db = admin.database();
 const gpsRef = db.ref('gpsData');
