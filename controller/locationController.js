@@ -6,7 +6,7 @@ var io = require("../App.js");
 io.on('connection', (socket) => {
   console.log('test');
   socket.on('communicate', (data) => {
-    console.log('God are communicating: ', data);
+    console.log('Test data: ', data);
   });
 });
 // const db = admin.database();
@@ -19,7 +19,7 @@ const newData = async (req, res) => {
       longitude: req.body.longitude,
       timestamp: new Date().getTime(),
     };
-
+    // io.emit('new-gps-data', gpsData); //testing 
     gpsRef.push(gpsData)
       .then(() => {
         console.log('GPS data added to the database');
